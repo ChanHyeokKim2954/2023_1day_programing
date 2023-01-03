@@ -94,7 +94,7 @@ int inverse_speed_mode(void)
   return pwm;
 }
 
-int angular_speed_pid_control(void)
+void angular_speed_pid_control(void)
 {
   int angular_speed_pid_pwm1 = 0;
   angular_speed_pid_pwm1 = (Pw * angular_speed_error) + (Pw_d * angular_speed_error_d) + (Pw_i * angular_speed_error_sum); 
@@ -106,11 +106,9 @@ int angular_speed_pid_control(void)
   
   if(angular_speed_pid_pwm > 0) motor_control(1,angular_speed_pid_pwm);
   else if(angular_speed_pid_pwm <= 0) motor_control(-1,-angular_speed_pid_pwm);
-  
-  return angular_speed_pid_pwm;
 }
 
-int pos_pid_control(void)
+void pos_pid_control(void)
 {
   position_control_pid_pwm = (P * pos_error) + (Pd * pos_error_d) + (Pi * pos_error_sum); 
   position_control_pid_pwm = (position_control_pid_pwm>=255) ? 255 : position_control_pid_pwm; 
@@ -119,8 +117,6 @@ int pos_pid_control(void)
   if(fabs(pos_error)<=2) pos_error_sum = 0;
   if(position_control_pid_pwm > 0) motor_control(1,position_control_pid_pwm);
   else if(position_control_pid_pwm <= 0) motor_control(-1,-position_control_pid_pwm);
-  
-  return position_control_pid_pwm;
 }
 
 void timer()
