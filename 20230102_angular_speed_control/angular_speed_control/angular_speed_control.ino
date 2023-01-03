@@ -119,6 +119,8 @@ int pos_pid_control(void)
   if(fabs(pos_error)<=2) pos_error_sum = 0;
   if(position_control_pid_pwm > 0) motor_control(1,position_control_pid_pwm);
   else if(position_control_pid_pwm <= 0) motor_control(-1,-position_control_pid_pwm);
+  
+  return position_control_pid_pwm;
 }
 
 void timer()
