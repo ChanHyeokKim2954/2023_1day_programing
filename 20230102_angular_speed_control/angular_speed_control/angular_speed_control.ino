@@ -106,6 +106,8 @@ int angular_speed_pid_control(void)
   
   if(angular_speed_pid_pwm > 0) motor_control(1,angular_speed_pid_pwm);
   else if(angular_speed_pid_pwm <= 0) motor_control(-1,-angular_speed_pid_pwm);
+  
+  return angular_speed_pid_pwm;
 }
 
 int pos_pid_control(void)
