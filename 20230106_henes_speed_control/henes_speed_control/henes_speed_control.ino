@@ -123,8 +123,8 @@ int position_control(void){
   int position_control_pwm = 0;
   
   position_control_pwm = P * pos_error + Pd * pos_error_d + Pi *pos_error_sum ;
-  position_control_pwm = (position_control_pwm >= 150) ? 150 : position_control_pwm;
-  position_control_pwm = (position_control_pwm <= -150) ? -150 : position_control_pwm;
+  position_control_pwm = (position_control_pwm >= 255) ? 255 : position_control_pwm;
+  position_control_pwm = (position_control_pwm <= -255) ? -255 : position_control_pwm;
 
   front_pos_control_pwm = front_dead_zone_pwm_correction(position_control_pwm);
   rear_pos_control_pwm = rear_dead_zone_pwm_correction(position_control_pwm);
