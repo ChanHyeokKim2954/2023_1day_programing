@@ -1,6 +1,7 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QLineEdit, QCheckBox, QRadioButton, QSpinBox,  QTabWidget
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QLineEdit, QCheckBox, QRadioButton, QSpinBox
 from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import *
 
 class MyApp(QWidget):
 
@@ -83,15 +84,18 @@ class MyApp(QWidget):
         spinbox.move(20, 180)
 
         #TableWidget
-        tab1 = QWidget(self)
-        tab2 = QWidget(self)
+        tableWidget = QTableWidget(self)
+        tableWidget.setRowCount(5)
+        tableWidget.setColumnCount(4)
 
-        tabs = QTabWidget(self)
-        tabs.addTab(tab1, 'Tab1')
-        tabs.addTab(tab2, 'Tab2')
-        tabs.move(0, 0)
+        tableWidget.setEditTriggers(QAbstractItemView.AllEditTriggers)
+        tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
+        tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+
+        tableWidget.move(20,220)
+
         self.setWindowTitle('MotorControl')
-        self.setGeometry(300, 300, 370, 230)
+        self.setGeometry(300, 300, 380, 430)
         self.show()
 
     def onChanged1(self, text):
