@@ -169,7 +169,7 @@ int CRC16_MODBUS(const uint8 *nData, uint16 wLength)
     return wCRCWord;
 }
 
-void set_pwm_channel(void)
+void set_channel(void)
 {
 
     protocal_test[0] = 174;                 //PC
