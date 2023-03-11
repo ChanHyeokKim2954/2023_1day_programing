@@ -193,7 +193,7 @@ void set_channel(void)
 
 void send_ASCLIN_UART_message(void)
 {
-    set_pwm_channel();
+    set_channel();
     IfxAsclin_Asc_write(&g_ascHandle, protocal_test, &p_count, TIME_INFINITE);  /* Transmit data via TX */
 }
 
