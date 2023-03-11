@@ -33,6 +33,6 @@
 void init_ASCLIN_UART(void);                 /* Initialization function   */
 //void send_receive_ASCLIN_UART_message(void); /* Send and receive function */
 void send_ASCLIN_UART_message(void);
-void set_pwm_channel(void);
+void set_channel(void);
 
 #endif /* ASCLIN_UART_H_ */
