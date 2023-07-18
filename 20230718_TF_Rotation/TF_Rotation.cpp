@@ -68,7 +68,7 @@ void Input_data(void)
 	printf("===================================================== \n");
 }
 
-void TF_base_link_base_link_map(Point2D base_link_point2d)
+void TF_base_link_map_base_link(Point2D base_link_point2d)
 {
 	base_link_point2d.x = (MAP_X * Rotation_matrix_inverse[0][0]) + (MAP_Y * Rotation_matrix_inverse[0][1]);
 	base_link_point2d.y = (MAP_X * Rotation_matrix_inverse[1][0]) + (MAP_Y * Rotation_matrix_inverse[1][1]);
@@ -76,7 +76,7 @@ void TF_base_link_base_link_map(Point2D base_link_point2d)
 	printf("base_link_x :     %6.3lf base_link_y :     %6.3lf\n\n", base_link_point2d.x, base_link_point2d.y);
 }
 
-void TF_base_link_map_base_link(Point2D* base_link_map_point2d)
+void TF_base_link_base_link_map(Point2D* base_link_map_point2d)
 {
 	base_link_map_point2d->x = (BASELINK_X * Rotation_matrix[0][0]) + (BASELINK_Y * Rotation_matrix[0][1]);
 	base_link_map_point2d->y = (BASELINK_X * Rotation_matrix[1][0]) + (BASELINK_Y * Rotation_matrix[1][1]);
@@ -90,9 +90,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	set_rotation_matrix(base_link_origin.theta);
 	set_rotation_matrix_inverse(base_link_origin.theta);
 
-	TF_base_link_base_link_map(base_link_Point2D);
-	TF_base_link_map_base_link(&base_link_map_Point2D);
+	TF_base_link_map_base_link(base_link_Point2D);
+	TF_base_link_base_link_map(&base_link_map_Point2D);
 
 	return 0;
 }
-
