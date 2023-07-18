@@ -33,24 +33,20 @@ double Rotation_matrix_inverse[2][2];
 void set_rotation_matrix(double m_angle_degree)
 {
 	angle_radian = DEG2RAD(m_angle_degree);	
-	Rotation_matrix[0][0] = cos(angle_radian);
-	Rotation_matrix[0][1] = -sin(angle_radian);
-	Rotation_matrix[1][0] = sin(angle_radian);
-	Rotation_matrix[1][1] = cos(angle_radian);
+	Rotation_matrix[0][0] = cos(angle_radian);	Rotation_matrix[0][1] = -sin(angle_radian);
+	Rotation_matrix[1][0] = sin(angle_radian);	Rotation_matrix[1][1] = cos(angle_radian);
 }
 void set_rotation_matrix_inverse(double m_angle_degree)
 {
 	angle_radian = DEG2RAD(m_angle_degree);
 
-	Rotation_matrix_inverse[0][0] = cos(angle_radian);   
-	Rotation_matrix_inverse[0][1] = sin(angle_radian);
-	Rotation_matrix_inverse[1][0] = -sin(angle_radian);   
-	Rotation_matrix_inverse[1][1] = cos(angle_radian);
+	Rotation_matrix_inverse[0][0] = cos(angle_radian);	Rotation_matrix_inverse[0][1] = sin(angle_radian);
+	Rotation_matrix_inverse[1][0] = -sin(angle_radian);	Rotation_matrix_inverse[1][1] = cos(angle_radian);
 }
 
 void Input_data(void)
 {
-	printf("base_link map x , y, theta ���� �Է��Ͻÿ� \n");
+	printf("base_link map x , y, theta °ªÀ» ÀÔ·ÂÇÏ½Ã¿À \n");
 	printf("===================================================== \n");
 	printf("base_link_origin.x : ");
 	scanf_s("%lf", &base_link_origin.x);
