@@ -56,7 +56,7 @@ void set_rotation_matrix_inverse(double m_angle_degree)
 
 void Input_data(void)
 {
-	printf("base_link map x , y, theta 값을 입력하시오 \n");
+	printf("base_link_origin x , y, theta 값을 입력하시오 \n");
 	printf("===================================================== \n");
 	printf("base_link_origin.x : ");
 	scanf_s("%lf", &base_link_origin.x);
