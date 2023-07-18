@@ -90,8 +90,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	set_rotation_matrix(base_link_origin.theta);
 	set_rotation_matrix_inverse(base_link_origin.theta);
 
-	TF_base_link_map_base_link(base_link_Point2D);
-	TF_base_link_base_link_map(&base_link_map_Point2D);
+	TF_base_link_map_base_link(base_link_Point2D, &base_link_map_Point2D, base_link_origin);
+	TF_base_link_base_link_map(&base_link_Point2D, &base_link_map_Point2D, base_link_origin);
 
 	return 0;
 }
