@@ -28,8 +28,7 @@ double odom_y=0.0; //unit: m
 
 
 void imuCallback(const sensor_msgs::Imu::ConstPtr& msg) 
-{
-	 char buf[8];       
+{     
       tf2::Quaternion q(
         msg->orientation.x,
         msg->orientation.y,
