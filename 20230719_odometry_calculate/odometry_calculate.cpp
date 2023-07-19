@@ -108,11 +108,11 @@ int main(int argc, char **argv)
   ros::Rate loop_rate(10);  // 10
   while (ros::ok())
   {
-	odometry_calculate();
+    odometry_calculate();
 	
     encoder1data_old = encoder1data;
   
-	loop_rate.sleep();
+    loop_rate.sleep();
     ros::spinOnce();
   }
   
