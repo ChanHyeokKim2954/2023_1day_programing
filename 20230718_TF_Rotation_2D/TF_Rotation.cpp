@@ -25,7 +25,7 @@ typedef struct
 } Point2D;
 
 Pose2D    base_link_origin;
-Point2D   base_link_Point2D, base_link_map_Point2D, map_Point2D, transform_baselink, transform_map;
+Point2D   base_link_Point2D, base_link_map_Point2D, map_Point2D;
 
 double angle_degree;
 double angle_radian;
